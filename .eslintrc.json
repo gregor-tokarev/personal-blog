@@ -24,5 +24,6 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "camelcase": "warn"
   }
 }

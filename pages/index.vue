@@ -1,6 +1,10 @@
 <template>
   <div class="index">
-    <PointItem v-for="point in allPages" :key="point.id" :point="point"></PointItem>
+    <PointItem
+      v-for="point in allPages"
+      :key="point.id"
+      :point="point"
+    ></PointItem>
   </div>
 </template>
 
