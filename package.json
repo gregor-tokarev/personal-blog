@@ -30,6 +30,6 @@
   "dependencies": {
     "@notionhq/client": "^1.0.4",
     "axios": "^0.26.1",
-    "reset-css": "^5.0.1"
+    "normalize.css": "^8.0.1"
   }
 }
