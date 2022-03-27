@@ -1,0 +1,17 @@
+$mobile-max: 750px;
+$container-width-ps: 1080px;
+
+@mixin apply-ps() {
+  @media screen and (min-width: $mobile-max) {
+    @content;
+  }
+}
+
+@mixin container() {
+  margin: 0 15px;
+
+  @include apply-ps {
+    max-width: $container-width-ps;
+    margin: 0 auto;
+  }
+}

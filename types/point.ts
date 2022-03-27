@@ -3,4 +3,5 @@ export interface Point {
   lastEdit: string;
   coverUrl?: string;
   title: string;
+  intro: string;
 }

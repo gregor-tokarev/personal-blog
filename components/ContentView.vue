@@ -18,4 +18,7 @@ const content = computed<any>(() => {
 });
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.content {
+}
+</style>
