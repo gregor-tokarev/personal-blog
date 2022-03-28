@@ -20,5 +20,19 @@ const content = computed<any>(() => {
 
 <style scoped lang="scss">
 .content {
+  color: var(--gray-400);
+
+  :deep(h1) {
+    margin: 30px 0 5px;
+    color: var(--dark);
+
+    @include apply-ps {
+      margin: 30px 0 20px;
+    }
+  }
+
+  :deep(ul) {
+    list-style-position: inside;
+  }
 }
 </style>

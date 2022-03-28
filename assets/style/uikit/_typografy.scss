@@ -1,7 +1,7 @@
 @use "responsive/vars";
 
 .super-title {
-  font-size: 24px;
+  font-size: 28px;
   line-height: 33px;
   font-family: 'Manrope', sans-serif;
   font-style: normal;
@@ -14,7 +14,7 @@
 }
 
 .basic-title {
-  font-size: 20px;
+  font-size: 24px;
   line-height: 27px;
   font-family: 'Manrope', sans-serif;
   font-style: normal;
@@ -43,7 +43,7 @@
   font-family: 'Manrope', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 22px;
 
   @include apply-ps {

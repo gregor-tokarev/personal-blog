@@ -9,4 +9,13 @@
 import Header from "~/components/Header";
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.layout {
+  &__header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+}
+</style>
