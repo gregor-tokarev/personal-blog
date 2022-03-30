@@ -56,7 +56,6 @@ function scrollHandler (event: Event) {
   const offsetTop = content.value?.offsetTop;
   if (!offsetTop) return;
   const scrolledHeight = window.scrollY;
-  console.log(offsetTop, scrolledHeight);
 
   const isStartReading = offsetTop - (scrolledHeight) < 0;
   if (isStartReading) {

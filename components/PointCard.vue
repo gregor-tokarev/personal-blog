@@ -22,7 +22,6 @@ const props = defineProps<{ point: Point }>();
 const router = useRouter();
 
 function detailOnMobile () {
-  console.log(screen.width);
   if (screen.width < 750) {
     router.push({
       name: "point-id",
