@@ -49,7 +49,9 @@ export class NotionParser {
       );
     } else if (block.type === "heading_1") {
       return NotionParser.line(
-        `<h1 class="basic-title">${NotionParser.getText(block.heading_1)}</h1>`
+        `<h1 class="basic-title" id="${block.id}">${NotionParser.getText(
+          block.heading_1
+        )}</h1>`
       );
     } else if (block.type === "bulleted_list_item") {
       return NotionParser.line(

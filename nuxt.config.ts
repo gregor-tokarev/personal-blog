@@ -21,4 +21,6 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  modules: ["@nuxtjs/svg"],
 });

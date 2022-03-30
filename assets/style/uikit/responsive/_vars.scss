@@ -1,5 +1,5 @@
 $mobile-max: 750px;
-$container-width-ps: 1080px;
+$container-width-ps: 1181px;
 
 @mixin apply-ps() {
   @media screen and (min-width: $mobile-max) {
