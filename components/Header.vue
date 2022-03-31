@@ -54,7 +54,7 @@ import Button from "~/components/Button.vue";
   }
 
   &__text-mobile {
-    margin-left: 5px;
+    margin-left: 10px;
 
     @include apply-ps {
       display: none;
