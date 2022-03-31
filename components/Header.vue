@@ -5,7 +5,7 @@
         <img alt="my face" width="60px" height="60px" src="~public/img/my-face.jpg" class="header__face">
       </div>
       <div class="header__right">
-        <Button class="header__follow" type="gray">Follow</Button>
+        <!--        <Button class="header__follow" type="gray">Follow</Button>-->
         <Button>Contact me</Button>
       </div>
     </div>
