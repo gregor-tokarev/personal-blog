@@ -114,6 +114,8 @@ const toc = computed<{ name: string, anchor: string }[]>(() => {
   }
 
   &__wrapper {
+    padding-top: 20px;
+
     @include apply-ps {
       display: flex;
       align-items: flex-start;
