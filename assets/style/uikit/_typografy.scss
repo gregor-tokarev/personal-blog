@@ -30,12 +30,12 @@
   font-family: 'Manrope', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 27px;
+  font-size: 22px;
+  line-height: 30px;
 
   @include apply-ps {
-    font-size: 32px;
-    line-height: 44px;
+    font-size: 24px;
+    line-height: 33px;
   }
 }
 
