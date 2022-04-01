@@ -13,18 +13,13 @@ import Header from "~/components/Header";
 .layout {
   max-width: 2200px;
   margin: 0 auto;
-  padding-top: 100px;
-
-  @include apply-ps {
-    padding-top: 130px;
-  }
 
   &__header {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
-    z-index: 10;
+    z-index: $header-index;
   }
 }
 </style>

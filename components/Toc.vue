@@ -73,7 +73,7 @@ $checkbox-border: 1.5px;
 
   &__checkbox {
     position: relative;
-    z-index: 3;
+    z-index: $header-index;
     display: flex;
     align-items: center;
     justify-content: center;
