@@ -1,11 +1,18 @@
 <template>
   <div class="toc">
     <div class="toc__line">
-      <div class="toc__progress" :style="{'transform': `scaleY(${props.readProgress / 100})`}"></div>
+      <div
+        class="toc__progress"
+        :style="{ transform: `scaleY(${props.readProgress / 100})` }"
+      ></div>
     </div>
 
-    <a v-for="(heading, index) in props.headings" :key="heading.anchor" :href="'#' + heading.anchor"
-       class="toc__section ui-text">
+    <a
+      v-for="(heading, index) in props.headings"
+      :key="heading.anchor"
+      :href="'#' + heading.anchor"
+      class="toc__section ui-text"
+    >
       <div class="toc__item">
         <div v-html="CheckSvg" class="toc__checkbox"></div>
         {{ heading.name }}
@@ -21,12 +28,11 @@ import CheckSvg from "~/assets/icons/check.svg?raw";
 
 interface Props {
   readProgress: number;
-  headings: { anchor: string, name: string }[];
+  headings: { anchor: string; name: string }[];
 }
 
 const props = defineProps<Props>();
 </script>
-
 
 <style scoped lang="scss">
 $checkbox-size: 30px;
@@ -40,7 +46,7 @@ $checkbox-border: 1.5px;
     bottom: 0;
     left: 0;
 
-    mask-image: url("/public/img/toc-mask.svg");
+    mask-image: url("/img/toc-mask.svg");
     width: $checkbox-size;
     overflow: hidden;
   }
@@ -54,7 +60,6 @@ $checkbox-border: 1.5px;
   }
 
   &__section {
-
   }
 
   &__item {

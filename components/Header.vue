@@ -6,7 +6,7 @@
           alt="my face"
           width="60px"
           height="60px"
-          src="~public/img/my-face.jpg"
+          src="/img/my-face.jpg"
           class="header__face"
         />
 
