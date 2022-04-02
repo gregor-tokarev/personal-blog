@@ -3,11 +3,11 @@
     <div class="point__progress-bar">
       <div
         class="point__progress-line"
-        :style="{'width': readProgress + '%'}"
+        :style="{ width: readProgress + '%' }"
       ></div>
     </div>
 
-    <img :src="data.page.cover.external.url" :alt="title" class="point__img">
+    <img :src="data.page.cover.external.url" :alt="title" class="point__img" />
     <div class="point__wrapper container">
       <article class="point__article">
         <div class="point__info">
@@ -15,8 +15,12 @@
           <h3 class="point__intro hint-title">{{ intro }}</h3>
         </div>
 
-        <ContentView ref="content" class="point__content" content-source="notion"
-                     :content="data.blocks.results"></ContentView>
+        <ContentView
+          ref="content"
+          class="point__content"
+          content-source="notion"
+          :content="data.blocks.results"
+        ></ContentView>
       </article>
 
       <!-- table of contents -->
@@ -37,32 +41,33 @@ import { computed } from "@vue/reactivity";
 import Toc from "~/components/Toc.vue";
 
 const route = useRoute();
-const { data } = await useAsyncData(
-  "page",
-  () => $fetch(`/api/notion/one-page?pageId=${route.params.id}`)
+const { data } = await useAsyncData("page", () =>
+  $fetch(`/api/notion/one-page?pageId=${route.params.id}`)
 );
 const title = data.value.page.properties.Name.title[0].plain_text;
 const intro = data.value.page.properties.intro.rich_text[0].plain_text;
 
 useMeta({
-  title
+  title,
 });
 
 // Read progress calculation
 const readProgress = useReadProgress();
-const content = computed<HTMLElement | null>(() => document.querySelector(".point__article"));
+const content = computed<HTMLElement | null>(() =>
+  document.querySelector(".point__article")
+);
 
-function scrollHandler (event: Event) {
+function scrollHandler(event: Event) {
   const offsetTop = content.value?.offsetTop;
   if (!offsetTop) return;
   const scrolledHeight = window.scrollY;
 
-  const isStartReading = offsetTop - (scrolledHeight) < 0;
+  const isStartReading = offsetTop - scrolledHeight < 0;
   if (isStartReading) {
     const totalHeight = content.value?.scrollHeight - innerHeight;
     const contentScrolled = scrolledHeight - offsetTop;
 
-    readProgress.value = contentScrolled / totalHeight * 100;
+    readProgress.value = (contentScrolled / totalHeight) * 100;
   } else {
     readProgress.value = 0;
   }
@@ -76,12 +81,12 @@ onUnmounted(() => {
 });
 
 // Table of contents generation
-const toc = computed<{ name: string, anchor: string }[]>(() => {
+const toc = computed<{ name: string; anchor: string }[]>(() => {
   return data.value.blocks.results
-    .filter(block => block.type === "heading_1")
-    .map(block => ({
+    .filter((block) => block.type === "heading_1")
+    .map((block) => ({
       name: block.heading_1.rich_text[0].plain_text,
-      anchor: block.id
+      anchor: block.id,
     }));
 });
 </script>
@@ -151,7 +156,13 @@ const toc = computed<{ name: string, anchor: string }[]>(() => {
   }
 
   &__intro {
+    padding: 10px 15px;
+    background-color: var(--gray-100);
     color: var(--gray-400);
+
+    @include apply-ps {
+      padding: 15px 20px;
+    }
   }
 }
 </style>
