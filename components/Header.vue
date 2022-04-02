@@ -17,16 +17,16 @@
       </div>
       <div class="header__right">
         <!--        <Button class="header__follow" type="gray">Follow</Button>-->
-        <Button @click="contactModalOpen = !contactModalOpen"
-          >Contact me
+        <Button @click="contactModalOpen = !contactModalOpen">
+          Contact me
         </Button>
       </div>
     </div>
-  </header>
 
-  <teleport to="body">
-    <ContactModal v-model="contactModalOpen"></ContactModal>
-  </teleport>
+    <teleport to="body">
+      <ContactModal v-model="contactModalOpen"></ContactModal>
+    </teleport>
+  </header>
 </template>
 
 <script setup lang="ts">

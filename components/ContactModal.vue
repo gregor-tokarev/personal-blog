@@ -52,6 +52,7 @@ watch(toRefs(props).modelValue, (modelValue) => {
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: $modal-overlay-index;
   display: flex;
   align-items: flex-end;
 
