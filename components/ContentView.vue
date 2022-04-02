@@ -1,6 +1,5 @@
 <template>
-  <div v-html="content" class="content">
-  </div>
+  <div v-html="content" class="content"></div>
 </template>
 
 <script setup lang="ts">
@@ -12,8 +11,8 @@ const props = defineProps<{ contentSource: contentSource; content: any }>();
 
 const content = computed<any>(() => {
   if (props.contentSource === "notion") {
-    const parser = new NotionParser(props.content)
-    return parser.getHtml()
+    const parser = new NotionParser(props.content);
+    return parser.getHtml();
   }
 });
 </script>
@@ -33,6 +32,18 @@ const content = computed<any>(() => {
 
   :deep(ul) {
     list-style-position: inside;
+  }
+
+  :deep(p) {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    @include apply-ps {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
   }
 }
 </style>
