@@ -13,9 +13,9 @@ function getUserId() {
   }
 }
 
-export default defineNuxtPlugin(async () => {
+export default defineNuxtPlugin(async ({ $config }) => {
   const tracker = new Tracker({
-    projectKey: process.env.OPENREPLAY_KEY ?? "",
+    projectKey: $config.OPENREPLAY_KEY,
   });
   await tracker.start();
   tracker.setUserID(getUserId());

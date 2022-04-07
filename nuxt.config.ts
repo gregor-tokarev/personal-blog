@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     title: "Gregor's blog",
   },
 
-  env: {
+  publicRuntimeConfig: {
     OPENREPLAY_KEY: process.env.OPENREPLAY_KEY,
   },
 
