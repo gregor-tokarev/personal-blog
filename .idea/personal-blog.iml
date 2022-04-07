@@ -6,7 +6,9 @@
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/.output" />
+      <excludeFolder url="file://$MODULE_DIR$/.nuxt" />
     </content>
+    <content url="file://$MODULE_DIR$/.nuxt" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
