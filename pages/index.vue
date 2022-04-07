@@ -1,7 +1,11 @@
 <template>
   <div class="index">
     <div class="index__content container">
-      <PointCard v-for="point in allPages" :key="point.id" :point="point"></PointCard>
+      <PointCard
+        v-for="point in allPages"
+        :key="point.id"
+        :point="point"
+      ></PointCard>
     </div>
   </div>
 </template>
@@ -16,10 +20,10 @@ const { data: allPages } = await useFetch<Point[]>("/api/notion/all-pages");
 
 <style scoped lang="scss">
 .index {
-  padding-top: 30px;
+  padding-top: 106px;
 
   @include apply-ps {
-    padding-top: 60px;
+    padding-top: 136px;
   }
 
   &__content {
