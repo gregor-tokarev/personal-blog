@@ -2,10 +2,6 @@ import Tracker from "@openreplay/tracker/cjs";
 import { defineNuxtPlugin } from "#app";
 import { nanoid } from "nanoid";
 
-const tracker = new Tracker({
-  projectKey: process.env.OPENREPLAY_KEY ?? "",
-});
-
 function getUserId() {
   const ID = localStorage.getItem("userId");
   if (ID) {
@@ -18,6 +14,9 @@ function getUserId() {
 }
 
 export default defineNuxtPlugin(async () => {
+  const tracker = new Tracker({
+    projectKey: process.env.OPENREPLAY_KEY ?? "",
+  });
   await tracker.start();
   tracker.setUserID(getUserId());
 

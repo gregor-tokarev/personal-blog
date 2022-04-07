@@ -12,6 +12,11 @@ export default defineNuxtConfig({
   vueMeta: {
     title: "Gregor's blog",
   },
+
+  env: {
+    OPENREPLAY_KEY: process.env.OPENREPLAY_KEY,
+  },
+
   vite: {
     css: {
       preprocessorOptions: {
