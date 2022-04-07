@@ -9,6 +9,7 @@ function getUserId() {
   } else {
     const newUserId = nanoid(4);
     localStorage.setItem("userId", newUserId);
+
     return newUserId;
   }
 }
