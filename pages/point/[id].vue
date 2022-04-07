@@ -33,7 +33,7 @@
 
 <script setup lang="ts">
 import { useRoute } from "vue-router";
-import { useAsyncData, useMeta } from "#app";
+import { useAsyncData, useHead } from "#app";
 import ContentView from "~/components/ContentView.vue";
 import { useReadProgress } from "~/composables/useReadProgress";
 import { onMounted, onUnmounted } from "@vue/runtime-core";
@@ -47,7 +47,7 @@ const { data } = await useAsyncData("page", () =>
 const title = data.value.page.properties.Name.title[0].plain_text;
 const intro = data.value.page.properties.intro.rich_text[0].plain_text;
 
-useMeta({
+useHead({
   title,
 });
 
@@ -93,6 +93,8 @@ const toc = computed<{ name: string; anchor: string }[]>(() => {
 
 <style scoped lang="scss">
 .point {
+  padding-top: 76px;
+
   &__progress-bar {
     position: fixed;
     top: 76px;
