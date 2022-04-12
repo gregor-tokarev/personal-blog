@@ -1,4 +1,9 @@
-import { notionBlock, notionBlockType } from "~/types/block";
+import {
+  notionBlock,
+  NotionBlockContent,
+  notionBlockType,
+} from "~/types/block";
+import { ArrayElement } from "~/types/array-el";
 
 export class NotionParser {
   // eslint-disable-next-line no-useless-constructor
@@ -42,10 +47,37 @@ export class NotionParser {
     return "";
   }
 
+  private static applyStyle(
+    content: ArrayElement<NotionBlockContent["rich_text"]>
+  ): string {
+    let res = `${content.plain_text}`;
+    if (content.href) {
+      res = `<a href="${content.href}">${res}</a>`;
+    }
+    if (content.annotations.bold) {
+      res = `<strong>${res}</strong>`;
+    }
+    if (content.annotations.italic) {
+      res = `<i>${res}</i>`;
+    }
+
+    return res;
+  }
+
+  private static parseParagraph(block: notionBlock): string {
+    if (!block.paragraph.rich_text?.length) {
+      return "";
+    }
+
+    return block.paragraph.rich_text?.reduce((acc, subBlock) => {
+      return acc + this.applyStyle(subBlock);
+    }, "");
+  }
+
   private static parseBlock(block: notionBlock): string {
     if (block.type === "paragraph") {
-      return NotionParser.line(
-        `<p class="content-text">${NotionParser.getText(block.paragraph)}</p>`
+      return this.line(
+        `<p class="content-text">${this.parseParagraph(block)}</p>`
       );
     } else if (block.type === "heading_1") {
       return NotionParser.line(

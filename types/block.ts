@@ -4,7 +4,7 @@ export type notionBlockType =
   | "bulleted_list_item"
   | "heading_1";
 
-interface NotionBlockContent {
+export interface NotionBlockContent {
   captain?: string[];
   type?: "file";
   file?: {

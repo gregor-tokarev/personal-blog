@@ -30,6 +30,11 @@ const content = computed<any>(() => {
     }
   }
 
+  :deep(a) {
+    color: var(--dark);
+    text-decoration: underline;
+  }
+
   :deep(ul) {
     list-style-position: inside;
   }
