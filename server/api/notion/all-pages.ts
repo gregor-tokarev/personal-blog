@@ -1,8 +1,7 @@
-import { IncomingMessage, ServerResponse } from "http";
 import { notionClient } from "~/server/api/notion-client";
 import { Point } from "~/types/point";
 
-export default async function (req: IncomingMessage, res: ServerResponse) {
+export default async function () {
   const response = await notionClient.databases.query({
     database_id: process.env.NOTION_DATABASE_ID ?? "",
     archived: false,
