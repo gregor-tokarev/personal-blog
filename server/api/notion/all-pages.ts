@@ -8,7 +8,7 @@ export default async function () {
     sorts: [
       {
         property: "createdDate",
-        direction: "ascending",
+        direction: "descending",
       },
     ],
     filter: {
