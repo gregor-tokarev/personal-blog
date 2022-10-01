@@ -24,9 +24,9 @@
       </article>
 
       <!-- table of contents -->
-      <aside class="point__toc">
+<!--      <aside class="point__toc">
         <Toc :read-progress="readProgress" :headings="toc"></Toc>
-      </aside>
+      </aside>-->
     </div>
   </div>
 </template>
@@ -102,10 +102,6 @@ const toc = computed<{ name: string; anchor: string }[]>(() => {
     left: 0;
     height: 4px;
     background-color: var(--gray-100);
-
-    @include apply-ps {
-      display: none;
-    }
   }
 
   &__progress-line {
@@ -132,6 +128,7 @@ const toc = computed<{ name: string; anchor: string }[]>(() => {
   }
 
   &__article {
+    margin: 0 auto;
     @include apply-ps {
       flex-basis: 83%;
     }
