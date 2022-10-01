@@ -41,7 +41,7 @@ import { computed } from "@vue/reactivity";
 import Toc from "~/components/Toc.vue";
 
 const route = useRoute();
-const { data } = await useAsyncData("page", () =>
+const { data } = await useAsyncData(`page-${route.params.id}`, () =>
   $fetch(`/api/notion/one-page?pageId=${route.params.id}`)
 );
 const title = data.value.page.properties.Name.title[0].plain_text;
@@ -57,7 +57,7 @@ const content = computed<HTMLElement | null>(() =>
   document.querySelector(".point__article")
 );
 
-function scrollHandler(event: Event) {
+function scrollHandler() {
   const offsetTop = content.value?.offsetTop;
   if (!offsetTop) return;
   const scrolledHeight = window.scrollY;
