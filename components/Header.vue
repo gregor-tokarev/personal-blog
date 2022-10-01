@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="header__inner container">
-      <div class="header__left">
+      <router-link class="header__left" to="/">
         <img
           alt="my face"
           width="60px"
@@ -14,7 +14,7 @@
         <div class="header__text-desktop content-text">
           Georg Tokarev - Software engeneer & ux/ui designer
         </div>
-      </div>
+      </router-link>
       <div class="header__right">
         <!--        <Button class="header__follow" type="gray">Follow</Button>-->
         <Button @click="contactModalOpen = !contactModalOpen">
