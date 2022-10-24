@@ -2,7 +2,10 @@
   <div class="index">
     <div class="index__content container">
       <PointCard
-        v-for="point in allPages"
+        class="index__card"
+        v-for="(point, index) in allPages"
+        @click="router.push({ name: 'point-id', params: { id: point.id } })"
+        :layout="index === 0 ? 'horizontal' : 'vertical'"
         :key="point.id"
         :point="point"
       ></PointCard>
@@ -11,11 +14,12 @@
 </template>
 
 <script setup lang="ts">
-import { useFetch } from "#app";
+import { useFetch, useRouter } from "#app";
 import { Point } from "~/types/point";
 import PointCard from "~/components/PointCard.vue";
 
 const { data: allPages } = await useFetch<Point[]>("/api/notion/all-pages");
+const router = useRouter();
 </script>
 
 <style scoped lang="scss">
@@ -37,6 +41,12 @@ const { data: allPages } = await useFetch<Point[]>("/api/notion/all-pages");
       gap: 20px;
 
       @include container;
+    }
+  }
+
+  &__card {
+    &:first-child {
+      grid-column: span 2;
     }
   }
 }

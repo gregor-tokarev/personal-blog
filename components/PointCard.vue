@@ -1,42 +1,50 @@
 <template>
-  <div class="point-card">
-    <img @click="detailOnMobile" class="point-card__img" :alt="props.point.title" :src="props.point.coverUrl">
+  <div
+    class="point-card"
+    :class="{ 'point-card--horizontal': props.layout === 'horizontal' }"
+  >
+    <img
+      class="point-card__img"
+      :alt="props.point.title"
+      :src="props.point.coverUrl"
+    />
 
     <div class="point-card__body">
-      <h2 @click="detailOnMobile" class="point-card__title basic-title">{{ props.point.title }}</h2>
+      <h2 class="point-card__title basic-title">
+        {{ props.point.title }}
+      </h2>
       <p class="point-card__text content-text">{{ props.point.intro }}</p>
-
-      <nuxt-link :to="{name: 'point-id', params: {id: props.point.id}}">
-        <Button class="point-card__button">Read full</Button>
-      </nuxt-link>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import Button from "~/components/Button.vue";
 import { Point } from "~/types/point";
-import { useRouter } from "#app";
 
-const props = defineProps<{ point: Point }>();
-const router = useRouter();
-
-function detailOnMobile () {
-  if (screen.width < 750) {
-    router.push({
-      name: "point-id",
-      params: { id: props.point.id }
-    });
-  }
-}
+const props = defineProps<{
+  point: Point;
+  layout: "horizontal" | "vertical";
+}>();
 </script>
 
 <style scoped lang="scss">
 .point-card {
   border-bottom: 2px solid var(--gray-200);
+  cursor: pointer;
 
   @include apply-ps {
     border: 1px solid var(--gray-200);
+  }
+
+  &--horizontal {
+    @include apply-ps {
+      display: flex;
+
+      .point-card__img {
+        width: 49%;
+        max-height: 420px;
+      }
+    }
   }
 
   &__img {
