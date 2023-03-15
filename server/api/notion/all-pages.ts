@@ -1,7 +1,8 @@
 import { notionClient } from "~/server/api/notion-client";
 import { Point } from "~/types/point";
+import { defineEventHandler } from "h3";
 
-export default async function () {
+export default defineEventHandler(async () => {
   const response = await notionClient.databases.query({
     database_id: process.env.NOTION_DATABASE_ID ?? "",
     archived: false,
@@ -32,4 +33,4 @@ export default async function () {
       intro: page.properties.intro.rich_text[0].plain_text,
     }))
     .filter((page) => page.cover_url && page.intro);
-}
+});

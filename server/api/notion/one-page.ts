@@ -1,8 +1,8 @@
 import { notionClient } from "~/server/api/notion-client";
-import { getQuery } from "h3";
+import { defineEventHandler, getQuery } from "h3";
 
-export default async function (req: any) {
-  const query = getQuery(req);
+export default defineEventHandler(async (event) => {
+  const query = getQuery(event);
   const pageId = query.pageId as string;
 
   const blocksReq = notionClient.blocks.children.list({
@@ -18,4 +18,4 @@ export default async function (req: any) {
     page,
     blocks,
   };
-}
+});
