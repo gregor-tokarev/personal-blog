@@ -1,6 +1,5 @@
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
-  experimental: undefined,
   css: ["@/assets/style/global.scss"],
   typescript: {
     strict: true,
