@@ -1,9 +1,8 @@
-import { IncomingMessage, ServerResponse } from "http";
 import { notionClient } from "~/server/api/notion-client";
-import { useQuery } from "h3";
+import { getQuery } from "h3";
 
-export default async function (req: IncomingMessage, res: ServerResponse) {
-  const query = useQuery(req);
+export default async function (req: any) {
+  const query = getQuery(req);
   const pageId = query.pageId as string;
 
   const blocksReq = notionClient.blocks.children.list({

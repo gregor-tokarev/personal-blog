@@ -1,16 +1,9 @@
-import { defineNuxtConfig } from "nuxt";
-
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
+  experimental: undefined,
   css: ["@/assets/style/global.scss"],
   typescript: {
     strict: true,
-  },
-  loading: {
-    color: "#000",
-  },
-  vueMeta: {
-    title: "Gregor's blog",
   },
 
   vite: {
