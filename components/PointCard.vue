@@ -6,7 +6,7 @@
     <img
       class="point-card__img"
       :alt="props.point.title"
-      :src="props.point.coverUrl"
+      :src="props.point.cover_url"
     />
 
     <div class="point-card__body">

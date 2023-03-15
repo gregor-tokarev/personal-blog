@@ -1,7 +1,7 @@
 export interface Point {
   id: string;
-  lastEdit: string;
-  coverUrl?: string;
+  last_edit: string;
+  cover_url?: string;
   title: string;
   intro: string;
 }
