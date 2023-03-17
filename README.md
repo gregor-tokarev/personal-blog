@@ -1,29 +1,38 @@
-# Nuxt 3 Minimal Starter
+<h1 align="center">Welcome to personal-blog 👋</h1>
+<p>
+  <a href="https://www.npmjs.com/package/personal-blog" target="_blank">
+    <img alt="Version" src="https://img.shields.io/npm/v/personal-blog.svg">
+  </a>
+  <img src="https://img.shields.io/badge/node-%5E16-blue.svg" />
+</p>
 
-We recommend to look at the [documentation](https://v3.nuxtjs.org).
+> App that take notes from notion account and turn them into webpage. Uses nuxtjs ~3.3
 
-## Setup
+### 🏠 [Homepage](https://blog.tokarev.work)
 
-Make sure to install the dependencies
+## Prerequisites
 
-```bash
-yarn install
+- node ^16
+
+## Install
+
+```sh
+npm install
 ```
 
-## Development
+## Usage
 
-Start the development server on http://localhost:3000
-
-```bash
-yarn dev
+```sh
+npm run dev
 ```
 
-## Production
+## Author
 
-Build the application for production:
+👤 **Egor Tokarev**
 
-```bash
-yarn build
-```
+* Website: https://tokarev.work
+* Github: [@gregor-tokarev](https://github.com/gregor-tokarev)
 
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment).
+## Show your support
+
+Give a ⭐️ if this project helped you!
