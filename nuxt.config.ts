@@ -5,6 +5,10 @@ export default defineNuxtConfig({
     strict: true,
   },
 
+  experimental: {
+    viewTransition: true,
+  },
+
   vite: {
     css: {
       preprocessorOptions: {

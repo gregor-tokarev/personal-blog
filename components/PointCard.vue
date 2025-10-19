@@ -10,7 +10,10 @@
     />
 
     <div class="point-card__body">
-      <h2 class="point-card__title basic-title">
+      <h2
+        class="point-card__title basic-title"
+        :style="{ viewTransitionName: `title-${props.point.id}` }"
+      >
         {{ props.point.title }}
       </h2>
       <p class="point-card__text content-text">{{ props.point.intro }}</p>

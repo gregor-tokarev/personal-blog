@@ -11,7 +11,12 @@
     <div class="point__wrapper container">
       <article class="point__article">
         <div class="point__info">
-          <h1 class="point__title super-title">{{ title }}</h1>
+          <h1
+            class="point__title super-title"
+            :style="{ viewTransitionName: `title-${route.params.id}` }"
+          >
+            {{ title }}
+          </h1>
           <h3 class="point__intro hint-title">{{ intro }}</h3>
         </div>
 
@@ -24,7 +29,7 @@
       </article>
 
       <!-- table of contents -->
-<!--      <aside class="point__toc">
+      <!--      <aside class="point__toc">
         <Toc :read-progress="readProgress" :headings="toc"></Toc>
       </aside>-->
     </div>
