@@ -8,7 +8,7 @@
     "postinstall": "nuxt prepare"
   },
   "engines": {
-    "node": "^16"
+    "node": "^18"
   },
   "devDependencies": {
     "@nuxt/vite-builder": "^3.0.0-rc.11",
